@@ -32,7 +32,7 @@ import gettext
 from gi.repository import GLib
 from gi.repository import Gtk
 from gi.repository import GdkPixbuf
-import nltk.metrics.distance
+import Levenshtein
 import PIL.Image
 import PIL.ImageDraw
 
@@ -319,7 +319,7 @@ def check_spelling(spelling_lang, txt):
                 score -= 10
                 continue
             main_suggestion = suggestions[0]
-            lv_dist = nltk.metrics.distance.edit_distance(word, main_suggestion)
+            lv_dist = Levenshtein.distance(word, main_suggestion)
             if lv_dist > _MAX_LEVENSHTEIN_DISTANCE:
                 # hm, this word looks like it's in a bad shape
                 continue

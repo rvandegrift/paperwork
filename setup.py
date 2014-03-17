@@ -101,7 +101,7 @@ Let the machine do most of the work.
       ],
       scripts=['scripts/paperwork'],
       install_requires=[
-          "nltk",
+          "python-Levenshtein",
           "Pillow",
           "pycountry",
           # "pycairo",  # doesn't work ?
