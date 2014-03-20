@@ -1,0 +1,10 @@
+Files: *
+Copyright: 2011-2013 Jerome Flesch
+License: GPL-3+
+
+## Licence
+
+GPLv3 or later. See COPYING.
+
+On Debian systems, the complete text of the GNU General Public License
+can be found in the `/usr/share/common-licenses/GPL' file.

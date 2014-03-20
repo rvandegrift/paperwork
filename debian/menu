@@ -1,0 +1,5 @@
+?package(paperwork): needs="X11" section="Applications/Graphics" \
+		     title="Paperwork" \
+		     longtitle="Paperwork - Make dead trees searchable" \
+		     command="/usr/bin/paperwork" \
+		     icon="/usr/share/pixmaps/paperwork.svg"

@@ -1,0 +1,21 @@
+Source: paperwork
+Maintainer: Ross Vandegrift <ross@kallisti.us>
+Section: python
+Priority: optional
+Standards-Version: 3.9.5
+Build-Depends: debhelper (>= 9), dh-python, python-all (>= 2.7), python-setuptools
+Homepage: https://github.com/jflesch/paperwork
+Vcs-Browser: https://github.com/rvandegrift/paperwork/tree/debian
+Vcs-Git: https://github.com/rvandegrift/paperwork.git -b debian
+X-Python-Version: >= 2.7
+
+Package: paperwork
+Architecture: all
+Depends: ${python:Depends}, ${misc:Depends}
+Recommends: aspell
+Description: Automatically scan and OCR papers
+ Paperwork is a tool to make papers searchable.
+ .
+ The basic idea behind Paperwork is "scan & forget" : You should be able to
+ just scan a new document and forget about it until the day you need it again.
+ Let the machine do most of the work.
