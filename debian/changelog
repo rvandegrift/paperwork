@@ -1,3 +1,10 @@
+paperwork (0.1.2-2) unstable; urgency=medium
+
+  * debian/copyright: meet copyright format 1.0
+  * debian/patches: convert NLTK to python-levenshtein
+
+ -- Ross Vandegrift <ross@kallisti.us>  Wed, 02 Apr 2014 20:48:39 -0400
+
 paperwork (0.1.2-1) unstable; urgency=low
 
   * Initial release. (Closes: #721287)
