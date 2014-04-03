@@ -1,0 +1,49 @@
+From: Ross Vandegrift <ross@kallisti.us>
+Date: Mon, 17 Mar 2014 17:58:17 -0400
+Subject: Switch from NLTK to python-Levenshtein.
+
+NLTK is used only for its implementation of the Levenshtein distance
+algorithm.  This functionality is available as a much smaller C
+implementation in the python-Levenshtein module.
+
+Signed-off-by: Ross Vandegrift <ross@kallisti.us>
+---
+ setup.py              | 2 +-
+ src/paperwork/util.py | 4 ++--
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/setup.py b/setup.py
+index 03c1f55..b260626 100755
+--- a/setup.py
++++ b/setup.py
+@@ -101,7 +101,7 @@ Let the machine do most of the work.
+       ],
+       scripts=['scripts/paperwork'],
+       install_requires=[
+-          "nltk",
++          "python-Levenshtein",
+           "Pillow",
+           "pycountry",
+           # "pycairo",  # doesn't work ?
+diff --git a/src/paperwork/util.py b/src/paperwork/util.py
+index dbd7be1..f84b86c 100644
+--- a/src/paperwork/util.py
++++ b/src/paperwork/util.py
+@@ -32,7 +32,7 @@ import gettext
+ from gi.repository import GLib
+ from gi.repository import Gtk
+ from gi.repository import GdkPixbuf
+-import nltk.metrics.distance
++import Levenshtein
+ import PIL.Image
+ import PIL.ImageDraw
+ 
+@@ -319,7 +319,7 @@ def check_spelling(spelling_lang, txt):
+                 score -= 10
+                 continue
+             main_suggestion = suggestions[0]
+-            lv_dist = nltk.metrics.distance.edit_distance(word, main_suggestion)
++            lv_dist = Levenshtein.distance(word, main_suggestion)
+             if lv_dist > _MAX_LEVENSHTEIN_DISTANCE:
+                 # hm, this word looks like it's in a bad shape
+                 continue
